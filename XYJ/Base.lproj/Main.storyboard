@@ -26,6 +26,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="signinMobile:" destination="s0y-Kg-fH8" eventType="editingDidEnd" id="C38-Hg-4Fm"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的密码" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="V87-5K-pZZ">
                                 <rect key="frame" x="37.5" y="342" width="300" height="30"/>
@@ -119,10 +122,11 @@
                     <navigationItem key="navigationItem" id="IGm-BU-1Iv"/>
                     <connections>
                         <outlet property="inputPassword" destination="V87-5K-pZZ" id="P1K-7F-swR"/>
-                        <outlet property="inputUsername" destination="q8P-Y3-Eqe" id="g9v-q8-4wc"/>
+                        <outlet property="inputUsername" destination="q8P-Y3-Eqe" id="VjQ-S1-ZhI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="s0y-Kg-fH8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-55.200000000000003" y="134.48275862068968"/>
         </scene>
@@ -212,6 +216,9 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="确认注册"/>
+                                <connections>
+                                    <action selector="signinBtn:" destination="Jg6-H3-c2h" eventType="touchUpInside" id="lIm-wD-OkU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nIx-FC-a33">
                                 <rect key="frame" x="236" y="345" width="92" height="34"/>
@@ -256,6 +263,10 @@
                     </view>
                     <connections>
                         <outlet property="againBtn" destination="nIx-FC-a33" id="fiE-LE-nb5"/>
+                        <outlet property="signinMobile" destination="onx-NF-8iT" id="qv3-1n-U8V"/>
+                        <outlet property="signinPassword" destination="vlx-We-T88" id="LvX-CS-xJK"/>
+                        <outlet property="signinUsername" destination="Esf-8U-7AA" id="CUM-PT-7Ce"/>
+                        <outlet property="signinVcode" destination="LKM-NL-ggY" id="Ej2-LU-0fy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMU-KS-ro5" userLabel="First Responder" sceneMemberID="firstResponder"/>

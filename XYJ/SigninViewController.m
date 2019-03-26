@@ -9,22 +9,115 @@
 #import "SigninViewController.h"
 #import <AFNetworking.h>
 @interface SigninViewController ()
+@property (strong, nonatomic) NSString *signinMobileNum;
+@property (weak, nonatomic) IBOutlet UITextField *signinMobile;
 @property (weak, nonatomic) IBOutlet UIButton *againBtn;
+@property (weak, nonatomic) IBOutlet UITextField *signinUsername;
+@property (weak, nonatomic) IBOutlet UITextField *signinPassword;
+@property (weak, nonatomic) IBOutlet UITextField *signinVcode;
 
 @end
 
 @implementation SigninViewController
+//判断手机号(正则判断)
+-(BOOL)checkTelPhone:(NSString *)telPhone
+{
+    NSString *regex =  @"^[1][358][0-9]{9}$";
+    NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    BOOL isMatch = [pre evaluateWithObject:telPhone];
+    if (isMatch){
+        return YES;
+    }
+    return NO;
+}
 
-
+//判断密码长度逻辑
+- (BOOL)judgePassword:(NSString *)password{
+    if ([password length] > 6 && [password length] < 30) {
+        
+        return YES;
+    } else{
+        return NO;
+    }
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 
 }
 - (IBAction)sendCode:(id)sender {
+    
     [self messageTime];
+    [self getVertifyCode];
+}
+
+
+
+
+-(void)getVertifyCode{
+    NSString* signinMobileNum=self.signinMobile.text;
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    //请求头
+    [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSString *url = @"http://uapi.5aixi.com/v1/user/get_vcode";
+    NSMutableDictionary *parametersDic = [[NSMutableDictionary alloc] init];
+    //传入mobile数据
+    [parametersDic setObject:signinMobileNum forKey:@"mobile"];
+    [manager POST:url parameters:parametersDic progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+        
+    }
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              NSLog(@"请求成功：%@",responseObject);
+              
+          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              NSLog(@"请求失败：%@",error);
+          }];
+}
+
+//注册按钮
+- (IBAction)signinBtn:(id)sender {
+    //新建变量, 是否可以设定作用域?block?
+    NSString* username=self.signinUsername.text;
+    NSString* password=self.signinPassword.text;
+    NSString* mobile=self.signinMobile.text;
+    NSString* vcode=self.signinVcode.text;
+    
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    if([self checkTelPhone:mobile]){
+        UIAlertController *alert2= [UIAlertController alertControllerWithTitle:@"手机号格式错误" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+        
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"手机号格式错误" message:@"" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//        [alert addAction:<#(nonnull UIAlertAction *)#>];
+    }
+    
+    
+    
+    
+    //request到api
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    //请求头
+    [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSString *url = @"http://uapi.5aixi.com/v1/user/register";
+    NSMutableDictionary *parametersDic = [[NSMutableDictionary alloc] init];
+    //传入mobile数据
+    [parametersDic setObject:username forKey:@"username"];
+    [parametersDic setObject:password forKey:@"password"];
+    [parametersDic setObject:mobile forKey:@"mobile"];
+    [parametersDic setObject:vcode forKey:@"vcode"];
+    [manager POST:url parameters:parametersDic progress:^(NSProgress * _Nonnull uploadProgress) {
+
+
+    }
+          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+              NSLog(@"请求成功：%@",responseObject);
+
+          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+              NSLog(@"请求失败：%@",error);
+          }];
 }
 
 
@@ -64,24 +157,6 @@
     });
     dispatch_resume(_timer);
 }
--(void)getVertifyCode{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    //请求头
-    [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    NSString *url = @"http://uapi.5aixi.com/v1/user/get_vcode";
-    NSMutableDictionary *parametersDic = [[NSMutableDictionary alloc] init];
-    [parametersDic setObject:@"mobile" forKey:@"15626142123"];
-   
-    [manager POST:url parameters:parametersDic progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-        
-    }
-          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-              NSLog(@"请求成功：%@",responseObject);
-              
-              
-          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              NSLog(@"请求失败：%@",error);
-          }];
-}
+
+
 @end
