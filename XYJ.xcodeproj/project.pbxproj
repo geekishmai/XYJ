@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60CACA5567092BB94C64B8C7 /* libPods-XYJ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 565EAC0D8CD58FD229A71C34 /* libPods-XYJ.a */; };
 		CE21EDCA2248BE1E00D91F89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EDC92248BE1E00D91F89 /* AppDelegate.m */; };
 		CE21EDCD2248BE1E00D91F89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EDCC2248BE1E00D91F89 /* ViewController.m */; };
 		CE21EDD02248BE1E00D91F89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE21EDCE2248BE1E00D91F89 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 		CE21EDD82248BE1F00D91F89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EDD72248BE1F00D91F89 /* main.m */; };
 		CE21EDE22248BE1F00D91F89 /* XYJTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EDE12248BE1F00D91F89 /* XYJTests.m */; };
 		CE21EDED2248BE1F00D91F89 /* XYJUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EDEC2248BE1F00D91F89 /* XYJUITests.m */; };
+		CE21EDFC2248C84200D91F89 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EDFB2248C84200D91F89 /* SigninViewController.m */; };
+		CE21EDFE2248D28500D91F89 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE21EDFD2248D28500D91F89 /* Main.xib */; };
+		CE21EE002248D7A000D91F89 /* SVProgressHUD in Resources */ = {isa = PBXBuildFile; fileRef = CE21EDFF2248D7A000D91F89 /* SVProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		565EAC0D8CD58FD229A71C34 /* libPods-XYJ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYJ.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0E5240DE9AA2E3D1AAC96C4 /* Pods-XYJ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYJ.release.xcconfig"; path = "Target Support Files/Pods-XYJ/Pods-XYJ.release.xcconfig"; sourceTree = "<group>"; };
 		CE21EDC52248BE1E00D91F89 /* XYJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE21EDC82248BE1E00D91F89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE21EDC92248BE1E00D91F89 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +57,11 @@
 		CE21EDE82248BE1F00D91F89 /* XYJUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XYJUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE21EDEC2248BE1F00D91F89 /* XYJUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYJUITests.m; sourceTree = "<group>"; };
 		CE21EDEE2248BE1F00D91F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE21EDFA2248C84200D91F89 /* SigninViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
+		CE21EDFB2248C84200D91F89 /* SigninViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
+		CE21EDFD2248D28500D91F89 /* Main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
+		CE21EDFF2248D7A000D91F89 /* SVProgressHUD */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SVProgressHUD; path = "../../../../Downloads/SVProgressHUD-master/SVProgressHUD"; sourceTree = "<group>"; };
+		DA2C1CABF3FB0374753F49A8 /* Pods-XYJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYJ.debug.xcconfig"; path = "Target Support Files/Pods-XYJ/Pods-XYJ.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60CACA5567092BB94C64B8C7 /* libPods-XYJ.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F7465A5B71422B2277BA372 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				565EAC0D8CD58FD229A71C34 /* libPods-XYJ.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE21EDBC2248BE1E00D91F89 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +105,8 @@
 				CE21EDE02248BE1F00D91F89 /* XYJTests */,
 				CE21EDEB2248BE1F00D91F89 /* XYJUITests */,
 				CE21EDC62248BE1E00D91F89 /* Products */,
+				F9C9E3D80EB84A856D287510 /* Pods */,
+				7F7465A5B71422B2277BA372 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +123,15 @@
 		CE21EDC72248BE1E00D91F89 /* XYJ */ = {
 			isa = PBXGroup;
 			children = (
+				CE21EDFF2248D7A000D91F89 /* SVProgressHUD */,
 				CE21EDC82248BE1E00D91F89 /* AppDelegate.h */,
 				CE21EDC92248BE1E00D91F89 /* AppDelegate.m */,
 				CE21EDCB2248BE1E00D91F89 /* ViewController.h */,
 				CE21EDCC2248BE1E00D91F89 /* ViewController.m */,
 				CE21EDCE2248BE1E00D91F89 /* Main.storyboard */,
+				CE21EDFD2248D28500D91F89 /* Main.xib */,
+				CE21EDFA2248C84200D91F89 /* SigninViewController.h */,
+				CE21EDFB2248C84200D91F89 /* SigninViewController.m */,
 				CE21EDD12248BE1F00D91F89 /* Assets.xcassets */,
 				CE21EDD32248BE1F00D91F89 /* LaunchScreen.storyboard */,
 				CE21EDD62248BE1F00D91F89 /* Info.plist */,
@@ -132,6 +158,15 @@
 			path = XYJUITests;
 			sourceTree = "<group>";
 		};
+		F9C9E3D80EB84A856D287510 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA2C1CABF3FB0374753F49A8 /* Pods-XYJ.debug.xcconfig */,
+				A0E5240DE9AA2E3D1AAC96C4 /* Pods-XYJ.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +174,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE21EDF12248BE1F00D91F89 /* Build configuration list for PBXNativeTarget "XYJ" */;
 			buildPhases = (
+				0C3135580BC139C04DE13DEE /* [CP] Check Pods Manifest.lock */,
 				CE21EDC12248BE1E00D91F89 /* Sources */,
 				CE21EDC22248BE1E00D91F89 /* Frameworks */,
 				CE21EDC32248BE1E00D91F89 /* Resources */,
@@ -236,7 +272,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE21EDD52248BE1F00D91F89 /* LaunchScreen.storyboard in Resources */,
+				CE21EE002248D7A000D91F89 /* SVProgressHUD in Resources */,
 				CE21EDD22248BE1F00D91F89 /* Assets.xcassets in Resources */,
+				CE21EDFE2248D28500D91F89 /* Main.xib in Resources */,
 				CE21EDD02248BE1E00D91F89 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,11 +295,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C3135580BC139C04DE13DEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XYJ-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE21EDC12248BE1E00D91F89 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE21EDFC2248C84200D91F89 /* SigninViewController.m in Sources */,
 				CE21EDCD2248BE1E00D91F89 /* ViewController.m in Sources */,
 				CE21EDD82248BE1F00D91F89 /* main.m in Sources */,
 				CE21EDCA2248BE1E00D91F89 /* AppDelegate.m in Sources */,
@@ -433,6 +497,7 @@
 		};
 		CE21EDF22248BE1F00D91F89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA2C1CABF3FB0374753F49A8 /* Pods-XYJ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +515,7 @@
 		};
 		CE21EDF32248BE1F00D91F89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0E5240DE9AA2E3D1AAC96C4 /* Pods-XYJ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

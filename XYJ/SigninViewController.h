@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SigninViewController.h
 //  XYJ
 //
 //  Created by user on 2019/3/25.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <NSURLConnectionDataDelegate, NSURLSessionDelegate>
+NS_ASSUME_NONNULL_BEGIN
 
+@interface SigninViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
