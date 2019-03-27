@@ -25,20 +25,24 @@
     NSString *regex =  @"^[1][358][0-9]{9}$";
     NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     BOOL isMatch = [pre evaluateWithObject:telPhone];
-    if (isMatch){
-        return YES;
-    }
-    return NO;
+    return isMatch;
+}
+
+//判断用户名
+-(BOOL) checkUsername:(NSString *)nickname
+{
+    NSString *userNameRegex = @"^[A-Za-z0-9]{6,30}+$";
+    NSPredicate *userNamePredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",userNameRegex];
+    BOOL B = [userNamePredicate evaluateWithObject:nickname];
+    return B;
 }
 
 //判断密码长度逻辑
-- (BOOL)judgePassword:(NSString *)password{
-    if ([password length] > 6 && [password length] < 30) {
-        
-        return YES;
-    } else{
-        return NO;
-    }
+- (BOOL) checkPassword:(NSString *)passWord
+{
+    NSString *passWordRegex = @"^[a-zA-Z0-9]{6,30}+$";
+    NSPredicate *passWordPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",passWordRegex];
+    return [passWordPredicate evaluateWithObject:passWord];
 }
 
 
@@ -49,7 +53,6 @@
 
 }
 - (IBAction)sendCode:(id)sender {
-    
     [self messageTime];
     [self getVertifyCode];
 }
@@ -86,17 +89,36 @@
     NSString* mobile=self.signinMobile.text;
     NSString* vcode=self.signinVcode.text;
     
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if([self checkTelPhone:mobile]){
-        UIAlertController *alert2= [UIAlertController alertControllerWithTitle:@"手机号格式错误" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+   
+    if(![self checkTelPhone:mobile]){
+        UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"手机号格式错误" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction  *action) {
+            
+        }];
         
-//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"手机号格式错误" message:@"" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-//        [alert addAction:<#(nonnull UIAlertAction *)#>];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
     }
     
+    else if(![self checkUsername:username]){
+        UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"用户名格式错误" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction  *action) {
+            
+        }];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     
+    else if(![self checkPassword:password]){
+        UIAlertController *alert= [UIAlertController alertControllerWithTitle:@"密码格式错误" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction=[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction  *action) {
+            
+        }];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     
-    
+
     //request到api
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     //请求头
