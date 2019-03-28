@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface SigninViewController : UIViewController
-
+-(BOOL) checkUsername:(NSString *)nickname;
+- (BOOL) checkPassword:(NSString *)passWord;
+-(BOOL)checkTelPhone:(NSString *)telPhone;
 @end
 
-NS_ASSUME_NONNULL_END
+

@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *signinVcode;
 
 @end
-
 @implementation SigninViewController
 //判断手机号(正则判断)
 -(BOOL)checkTelPhone:(NSString *)telPhone
@@ -158,7 +157,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示
                 [self.againBtn setTitle:@"发送验证码" forState:UIControlStateNormal];
-                [_againBtn setTitleColor:[UIColor blackColor] forState:0];
+                [self->_againBtn setTitleColor:[UIColor blackColor] forState:0];
                 self.againBtn.userInteractionEnabled = YES;
             });
         }else{
@@ -169,7 +168,7 @@
                 [UIView beginAnimations:nil context:nil];
                 [UIView setAnimationDuration:1];
                 [self.againBtn setTitle:[NSString stringWithFormat:@"(%@s)",strTime] forState:UIControlStateNormal];
-                [_againBtn setTitleColor:[UIColor blueColor] forState:0];
+                [self->_againBtn setTitleColor:[UIColor blueColor] forState:0];
                 //To do
                 [UIView commitAnimations];
                 self.againBtn.userInteractionEnabled = NO;

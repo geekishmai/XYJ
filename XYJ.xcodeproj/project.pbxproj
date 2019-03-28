@@ -18,7 +18,9 @@
 		CE21EDED2248BE1F00D91F89 /* XYJUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EDEC2248BE1F00D91F89 /* XYJUITests.m */; };
 		CE21EDFC2248C84200D91F89 /* SigninViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EDFB2248C84200D91F89 /* SigninViewController.m */; };
 		CE21EDFE2248D28500D91F89 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE21EDFD2248D28500D91F89 /* Main.xib */; };
-		CE21EE2E2249DE5300D91F89 /* underLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EE2D2249DE5300D91F89 /* underLine.m */; };
+		CE21EE34224B4EA800D91F89 /* 鳄鱼头.png in Resources */ = {isa = PBXBuildFile; fileRef = CE21EE33224B4EA800D91F89 /* 鳄鱼头.png */; };
+		CE21EE3A224B736400D91F89 /* trackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EE39224B736400D91F89 /* trackCell.m */; };
+		CE21EE3D224B76D300D91F89 /* collectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE21EE3C224B76D300D91F89 /* collectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +62,11 @@
 		CE21EDFA2248C84200D91F89 /* SigninViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SigninViewController.h; sourceTree = "<group>"; };
 		CE21EDFB2248C84200D91F89 /* SigninViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SigninViewController.m; sourceTree = "<group>"; };
 		CE21EDFD2248D28500D91F89 /* Main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
-		CE21EE2C2249DE5300D91F89 /* underLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = underLine.h; sourceTree = "<group>"; };
-		CE21EE2D2249DE5300D91F89 /* underLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = underLine.m; sourceTree = "<group>"; };
+		CE21EE33224B4EA800D91F89 /* 鳄鱼头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "鳄鱼头.png"; path = "../../../../Downloads/鳄鱼头.png"; sourceTree = "<group>"; };
+		CE21EE38224B736400D91F89 /* trackCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = trackCell.h; sourceTree = "<group>"; };
+		CE21EE39224B736400D91F89 /* trackCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = trackCell.m; sourceTree = "<group>"; };
+		CE21EE3B224B76D300D91F89 /* collectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = collectionViewController.h; sourceTree = "<group>"; };
+		CE21EE3C224B76D300D91F89 /* collectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = collectionViewController.m; sourceTree = "<group>"; };
 		DA2C1CABF3FB0374753F49A8 /* Pods-XYJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYJ.debug.xcconfig"; path = "Target Support Files/Pods-XYJ/Pods-XYJ.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,8 +132,6 @@
 				CE21EDC82248BE1E00D91F89 /* AppDelegate.h */,
 				CE21EDC92248BE1E00D91F89 /* AppDelegate.m */,
 				CE21EDCB2248BE1E00D91F89 /* ViewController.h */,
-				CE21EE2C2249DE5300D91F89 /* underLine.h */,
-				CE21EE2D2249DE5300D91F89 /* underLine.m */,
 				CE21EDCC2248BE1E00D91F89 /* ViewController.m */,
 				CE21EDCE2248BE1E00D91F89 /* Main.storyboard */,
 				CE21EDFD2248D28500D91F89 /* Main.xib */,
@@ -138,6 +141,11 @@
 				CE21EDD32248BE1F00D91F89 /* LaunchScreen.storyboard */,
 				CE21EDD62248BE1F00D91F89 /* Info.plist */,
 				CE21EDD72248BE1F00D91F89 /* main.m */,
+				CE21EE33224B4EA800D91F89 /* 鳄鱼头.png */,
+				CE21EE38224B736400D91F89 /* trackCell.h */,
+				CE21EE39224B736400D91F89 /* trackCell.m */,
+				CE21EE3B224B76D300D91F89 /* collectionViewController.h */,
+				CE21EE3C224B76D300D91F89 /* collectionViewController.m */,
 			);
 			path = XYJ;
 			sourceTree = "<group>";
@@ -277,6 +285,7 @@
 				CE21EDD22248BE1F00D91F89 /* Assets.xcassets in Resources */,
 				CE21EDFE2248D28500D91F89 /* Main.xib in Resources */,
 				CE21EDD02248BE1E00D91F89 /* Main.storyboard in Resources */,
+				CE21EE34224B4EA800D91F89 /* 鳄鱼头.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,9 +337,10 @@
 			files = (
 				CE21EDFC2248C84200D91F89 /* SigninViewController.m in Sources */,
 				CE21EDCD2248BE1E00D91F89 /* ViewController.m in Sources */,
+				CE21EE3A224B736400D91F89 /* trackCell.m in Sources */,
 				CE21EDD82248BE1F00D91F89 /* main.m in Sources */,
+				CE21EE3D224B76D300D91F89 /* collectionViewController.m in Sources */,
 				CE21EDCA2248BE1E00D91F89 /* AppDelegate.m in Sources */,
-				CE21EE2E2249DE5300D91F89 /* underLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
